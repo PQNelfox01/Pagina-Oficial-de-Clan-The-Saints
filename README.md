@@ -1,19 +1,41 @@
-# Pagina Oficial de Clan The Saints
+# 🚀 SNTS — Página Oficial del Clan The Saints (Rocket League)
 
-# SNTS — Página oficial del Clan Rocket League
+Bienvenido al sitio oficial del **Clan SNTS**, una comunidad competitiva y apasionada por _Rocket League_. Este proyecto web es una plataforma visual y dinámica que muestra a los jugadores del clan, sus estadísticas, logros y contenido multimedia.
 
-¡Bienvenido al sitio oficial del clan **SNTS**!
+---
 
-## 🔥 ¿Qué encontrarás?
+## 🧠 Características principales
 
-- 🧱 Plantilla de jugadores con fotos y descripciones.
-- 🔗 Estadísticas conectadas a Rocket League Tracker.
-- 🎨 Diferentes versiones de plantilla (para elegir la definitiva).
-- 🌙 Modo claro / oscuro.
-- 📱 Totalmente responsive para móviles y tablets.
+- 🧩 Galería de jugadores con fotos, descripciones, enlaces a Rocket League Tracker y filtros inteligentes.
+- 🎥 Clips destacados del clan en formato video.
+- 🎨 Diseño moderno con efectos `blur`, animaciones y tarjetas interactivas.
+- 🌗 Alternancia entre modo claro y oscuro.
+- 🌐 Cambio dinámico de idioma (EN/ES) sin recargar.
+- ☰ Menú lateral deslizable con filtros rápidos.
+- 📱 Diseño responsive optimizado para móviles y tablets.
+- 🔁 Scroll automático para modo presentación.
+- 💡 Código modular y comentado.
+
+---
 
 ## 📁 Estructura del proyecto
 
-## ✨ Créditos
+```plaintext
+📦 frontend/
+├── 📁 css/
+│   ├── plantilla5.css        # Estilos principales
+│   └── responsive5.css       # Media queries (Responsive)
+│
+├── 📁 js/
+│   └── plantilla5.js         # Lógica de interacción
+│
+├── 📁 img/
+│   └── Imagenes de los jugadores (Ej: Foto-Bksp.png, Foto-R.K.X.png, etc.)
+│
+├── 📁 videos/
+│   └── Alejjoh_Clip(01).mp4  # Clips destacados del clan
+│
+└── index.html                # Página principal del clan
+```
 
-Creado y mantenido por PQNelfox01.dev.
+LICENCIA SOLO AUTORIZADA PARA PERSONAL DE CLAN THE SAINTS.
