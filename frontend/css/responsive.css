@@ -1,4 +1,5 @@
-@media (max-widht: 768px) {
+/* TABLETS */
+@media (max-width: 768px) {
     .plantilla-principal {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -7,20 +8,32 @@
         grid-column: span 1 !important;
     }
 
+    .div1, .div2, .div3, .div4,
+    .div9, .div10, .div11, .div12 {
+        height: 220px;
+    }
+
     .plantilla-principal img {
-        height: auto;
-        aspect-ratio: 4/3;
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
     }
 }
 
-@media (max-w: 480px) {
+/* CELULARES */
+@media (max-width: 480px) {
     .plantilla-principal {
         grid-template-columns: 1fr;
     }
 
+    .plantilla-principal > div {
+        grid-column: span 1 !important;
+    }
+
     .plantilla-principal img {
-        height: auto;
-        aspect-ratio: 4/3;
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
     }
 
     .plantilla-principal .div5,
@@ -31,7 +44,7 @@
     .plantilla-principal .div14,
     .plantilla-principal .div15,
     .plantilla-principal .div16 {
-        font-size: 12px;
-        padding: 8px;
+        font-size: 13px;
+        padding: 10px;
     }
 }

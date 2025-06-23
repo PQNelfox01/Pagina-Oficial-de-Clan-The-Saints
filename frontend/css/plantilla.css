@@ -6,14 +6,15 @@
     gap: 10px;
     justify-content: center;
     padding: 20px;
-    background-color: #4f4f4f;
+    background-color: #5752523b;
 }
 
 .plantilla-principal img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
+    background-color: #0a0a0a;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
@@ -26,7 +27,7 @@
 .plantilla-principal .div14,
 .plantilla-principal .div15,
 .plantilla-principal .div16 {
-    background-color: #1a7f3c;
+    background-color: #0d0e0d;
     color: #ffffff;
     font-family: 'Arial', sans-serif;
     font-size: 14px;
@@ -42,6 +43,7 @@
 /* Estructura de las imagenes (div1 a div4 y div9 a div12) */
 .div1, .div2, .div3, .div4,
 .div9, .div10, .div11, .div12 {
+    height: 300px;
     grid-row: span 3 / span 3;
 } 
 
