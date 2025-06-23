@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNTS || Plantilla 5</title>
+    <link rel="stylesheet" href="/frontend/css/plantilla5.css">
+    <link rel="stylesheet" href="/frontend/css/responsive5.css">
+</head>
+<body class="light-mode">
+    
+    <!-- Botones superiores -->
+     <nav class="nav-top">
+        <a href="/frontend/index.html" class="boton-control">← Volver al Lobby</a>
+        <button id="toggleModo" class="boton-control">🌓 Cambia modo</button>
+        <button id="idiomaBtn" class="boton-control">🌐 EN/ES</button>
+        <button id="presentacionBtn" class="boton-control">🎥 Presentacion</button>
+        <button id="abrirMenu" class="boton-control">☰ Menú</button>
+    </nav>
+    
+    <nav id="navLateral" class="nav-lateral">
+        <button class="cerrar-menu" id="cerrarMenu">✖</button>
+        <button data-filtro="todos"=> Todos</button>
+        <button data-filtro="streamers"> streamers</button>
+        <button data-filtro="logros"> Logros</button>
+        <button data-filtro="horas"> Tiempo de Juego</button>
+    </nav>
+
+    <main>
+        <h1 class="titulo" data-en="SNTS Clan - Enharced Showcase">Clan SNTS - Plantilla Mejorada</h1>
+        
+    
+        <div class="galeria" id="galeria-jugadores">
+            <!-- Contenido generado por JS -->
+        </div>
+    
+        <section class="clips">
+            <h2 data-en="Top Goals & Plays">Clips del Clan</h2>
+            <video src="/frontend/videos/Alejjoh_Clip(01).mp4" controls></video>
+        </section>
+        
+        <section class="logros">
+            <h2 data-en="Clan Achivements">Logros del Clan</h2>
+            <ul>
+                <li data-en="Top 8 in Sudamerican Open (May 2024)">Top 8 en Sudamerican Open (Mayo 2024)</li>
+                <li data-en="Campeones del Torneo Nocturno (Feb 2024)">Campeones del Torneo Nocturno (Febrero 2024)</li>
+                <li data-en="Mejor asistencia media por jugador">Mejor asistencia media por jugador</li>
+                <li data-en="Rotaciones más limpias según análisis interno">Rotaciones más limpias según análisis interno</li>
+            </ul>
+        </section>
+
+    </main>
+    
+    <script src="/frontend/js/plantilla5.js"></script>
+</body>
+</html>
