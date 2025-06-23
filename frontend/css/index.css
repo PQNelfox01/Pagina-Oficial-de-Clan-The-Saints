@@ -1,0 +1,10 @@
+body {
+    background-color: gray;
+    color: white;
+    align-content: center;
+}
+
+.li {
+    align-items: center;
+    justify-content: center;
+}

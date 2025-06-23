@@ -1,0 +1,68 @@
+
+.plantilla-principal {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #4f4f4f;
+}
+
+.plantilla-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Estructura de descripciones. */
+.plantilla-principal .div5,
+.plantilla-principal .div6,
+.plantilla-principal .div7,
+.plantilla-principal .div8,
+.plantilla-principal .div13,
+.plantilla-principal .div14,
+.plantilla-principal .div15,
+.plantilla-principal .div16 {
+    background-color: #1a7f3c;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Estructura de las imagenes (div1 a div4 y div9 a div12) */
+.div1, .div2, .div3, .div4,
+.div9, .div10, .div11, .div12 {
+    grid-row: span 3 / span 3;
+} 
+
+/* Posiciones ya definidas correctamente por ti, no las toco */
+.div1 { grid-column: span 2; grid-row-start: 1; }
+.div2 { grid-column: span 2; grid-column-start: 3; grid-row-start: 1; }
+.div3 { grid-column: span 2; grid-column-start: 5; grid-row-start: 1; }
+.div4 { grid-column: span 2; grid-column-start: 7; grid-row-start: 1; }
+
+.div5 { grid-column: span 2; grid-row-start: 4; }
+.div6 { grid-column: span 2; grid-column-start: 3; grid-row-start: 4; }
+.div7 { grid-column: span 2; grid-column-start: 5; grid-row-start: 4; }
+.div8 { grid-column: span 2; grid-column-start: 7; grid-row-start: 4; }
+
+.div9 { grid-column: span 2; grid-row-start: 5; }
+.div10 { grid-column: span 2; grid-column-start: 3; grid-row-start: 5; }
+.div11 { grid-column: span 2; grid-column-start: 5; grid-row-start: 5; }
+.div12 { grid-column: span 2; grid-column-start: 7; grid-row-start: 5; }
+
+.div13 { grid-column: span 2; grid-row-start: 8; }
+.div14 { grid-column: span 2; grid-column-start: 3; grid-row-start: 8; }
+.div15 { grid-column: span 2; grid-column-start: 5; grid-row-start: 8; }
+.div16 { grid-column: span 2; grid-column-start: 7; grid-row-start: 8; }
+        
