@@ -1,11 +1,15 @@
+// === NAV LATERAL (Abrir / Cerrar) ===
 document.getElementById("abrirMenu").addEventListener("click", () => {
   document.getElementById("navLateral").classList.add("abierto");
+  document.body.classList.add("menu-abierto");
 });
 
 document.getElementById("cerrarMenu").addEventListener("click", () => {
   document.getElementById("navLateral").classList.remove("abierto");
+  document.body.classList.remove("menu-abierto"); // CORREGIDO
 });
 
+// === DOM CARGADO ===
 document.addEventListener("DOMContentLoaded", () => {
   const jugadores = [
     {
@@ -23,11 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: '""',
       img: "/frontend/img/Foto-Bksp.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Bksp/overview",
-      streamer: true, // cambiar manualmente si esta en vivo.. por ahora no backend
+      streamer: true,
       enVivo: false,
       logrosDestacados: true,
       horas: 2945
-
     },
     {
       nombre: "R.K.X",
@@ -88,82 +91,92 @@ document.addEventListener("DOMContentLoaded", () => {
       enVivo: false,
       logrosDestacados: false,
       horas: 1927
-    },
-    // Agrega más miembros aquí
+    }
   ];
 
   const contenedor = document.getElementById("galeria-jugadores");
 
-function renderizar(jugadoresFiltrados) {
-  contenedor.innerHTML = ""; // limpiar
-  jugadoresFiltrados.forEach(j => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${j.img}" alt="${j.nombre}">
-      <div class="info">
-        <p><strong>${j.nombre}</strong> - ${j.desc}</p>
-        <a href="${j.tracker}" target="_blank">Ver en RL Tracker</a>
-        ${j.streamer ? `<span class="insignia">🎥 Streamer activo</span>` : ""}
-        ${j.streamer ? `
-          <span class="estado-stream ${j.enVivo ? 'online' : 'offline'}">
-            ${j.enVivo ? '🎥 En directo ahora' : '❌ Streamer desconectado'}
-          </span>` : ""}
-      </div>
-    `;
-    contenedor.appendChild(card);
-  });
-}
+  // === FUNCION PARA RENDERIZAR LAS CARDS ===
+  function renderizar(jugadoresFiltrados) {
+    contenedor.innerHTML = ""; // Limpia la galería
 
-renderizar(jugadores); // Mostrar todos al cargar
+    jugadoresFiltrados.forEach(j => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${j.img}" alt="${j.nombre}">
+        <div class="info">
+          <p><strong>${j.nombre}</strong> - ${j.desc}</p>
+          <a href="${j.tracker}" target="_blank">Ver en RL Tracker</a>
+          ${j.streamer ? `<span class="insignia">🎥 Streamer activo</span>` : ""}
+          ${j.streamer ? `
+            <span class="estado-stream ${j.enVivo ? 'online' : 'offline'}">
+              ${j.enVivo ? '🎥 En directo ahora' : '❌ Streamer desconectado'}
+            </span>` : ""}
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  }
 
-document.querySelectorAll(".filtros button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const filtro = btn.getAttribute("data-filtro");
+  // Render inicial
+  renderizar(jugadores);
 
-    let filtrados = jugadores;
-    if (filtro === "streamers") {
-      filtrados = jugadores.filter(j => j.streamer);
-    } else if (filtro === "logros") {
-      filtrados = jugadores.filter(j => j.logrosDestacados);
-    } else if (filtro === "horas") {
-      filtrados = jugadores.filter(j => j.horas >= 2000);
-    }
-
-    renderizar(filtrados);
-  });
-});
-
-  // NAV Lateral
-  document.querySelectorAll(".nav-lateral button[data-filtro]").forEach(btn => {
+  // === FILTROS SUPERIORES ===
+  document.querySelectorAll(".filtros button").forEach(btn => {
     btn.addEventListener("click", () => {
       const filtro = btn.getAttribute("data-filtro");
-      let filtrados = jugadores;
 
-      if (filtro === "streamers") filtrados = jugadores.filter(j => j.streamer);
-      else if (filtro === "logros") filtrados = jugadores.filter(j => j.logrosDestacados);
-      else if (filtro === "horas") filtrados = jugadores.filter(j => j.horas >=1000);
+      let filtrados = jugadores;
+      if (filtro === "streamers") {
+        filtrados = jugadores.filter(j => j.streamer);
+      } else if (filtro === "logros") {
+        filtrados = jugadores.filter(j => j.logrosDestacados);
+      } else if (filtro === "horas") {
+        filtrados = jugadores.filter(j => j.horas >= 2000);
+      }
 
       renderizar(filtrados);
-      document.getElementById("navLateral").classList.remove("abierto");
     });
   });
 
-  // 🌓 Modo oscuro / claro
+  // === FILTROS DESDE NAV LATERAL ===
+  document.querySelectorAll(".nav-lateral button[data-filtro]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filtro = btn.getAttribute("data-filtro");
+
+      let filtrados = jugadores;
+      if (filtro === "streamers") {
+        filtrados = jugadores.filter(j => j.streamer);
+      } else if (filtro === "logros") {
+        filtrados = jugadores.filter(j => j.logrosDestacados);
+      } else if (filtro === "horas") {
+        filtrados = jugadores.filter(j => j.horas >= 1000);
+      }
+
+      renderizar(filtrados);
+
+      // Cierra el menú y remueve la clase
+      document.getElementById("navLateral").classList.remove("abierto");
+      document.body.classList.remove("menu-abierto");
+    });
+  });
+
+  // === MODO OSCURO/CLARO ===
   document.getElementById("toggleModo").addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
   });
 
-  // 🌐 Cambio de idioma
+  // === CAMBIO DE IDIOMA ===
   document.getElementById("idiomaBtn").addEventListener("click", () => {
     document.querySelectorAll("[data-en]").forEach(el => {
       const actual = el.textContent;
       el.textContent = el.getAttribute("data-en");
-      el.setAttribute("data-en", actual); // Swap para permitir volver
+      el.setAttribute("data-en", actual); // Intercambia los valores
     });
   });
 
-  // 🎥 Modo presentación automática (slideshow scroll)
+  // === MODO PRESENTACIÓN (SCROLL AL FINAL) ===
   document.getElementById("presentacionBtn").addEventListener("click", () => {
     window.scrollTo({
       top: document.body.scrollHeight,

@@ -1,39 +1,45 @@
+/* ========== BASE ========== */
 body {
     margin: 0;
+    padding: 20px;
     font-family: 'Arial', sans-serif;
     background-color: #0a0f2c;
     color: #fff;
-    padding: 20px;
     scroll-behavior: smooth;
     animation: fadeIn 1s ease;
 }
 
-/* NAV Superior */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========== NAV SUPERIOR ========== */
 .nav-top {
     position: sticky;
     top: 0;
-    background-color: rgba(10,15,44,0.95);
     display: flex;
     justify-content: flex-end;
     gap: 12px;
     padding: 10px 20px;
-    z-index: 999;
+    background-color: rgba(10,15,44,0.95);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
+    z-index: 999;
 }
 
-/* NAV Lateral */
+/* ========== NAV LATERAL ========== */
 .nav-lateral {
     position: fixed;
     top: 0;
     left: -250px;
-    height: 100vh;
     width: 250px;
-    background-color: #1e1f33;
+    height: 100vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
     gap: 10px;
+    background-color: #1e1f33;
     transition: left 0.3s ease;
     z-index: 1000;
 }
@@ -49,8 +55,8 @@ body {
     border: none;
     padding: 10px;
     border-radius: 6px;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
     transition: background 0.2s ease;
 }
 
@@ -66,6 +72,76 @@ body {
     margin-bottom: 20px;
 }
 
+/* Ajuste de galeria cuando el menú está abierto */
+body.menu-abierto main {
+    margin-left: 260px;
+    transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    body.menu-abierto main {
+        margin-left: 0;
+    }
+}
+
+/* ========== BOTONES ========== */
+.botones-top {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 20px;
+    position: sticky;
+    top: 8px;
+    background-color: rgba(10, 15, 44, 0.95);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+}
+
+.boton-control {
+    background-color: #1e1f33;
+    color: #4dcfff;
+    border: 1px solid #4dcfff;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.boton-control:hover {
+    background-color: #4dcfff;
+    color: #0a0f2c;
+    box-shadow: 0 0 10px #4dcfff;
+}
+
+/* ========== FILTROS ========== */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros button {
+    background-color: #1e1f33;
+    color: #4dcfff;
+    border: 1px solid #4dcfff;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtros button:hover {
+    background-color: #4dcfff;
+    color: #0a0f2c;
+}
+
+/* ========== TITULOS ========== */
 .titulo {
     text-align: center;
     font-size: 28px;
@@ -73,6 +149,7 @@ body {
     color: inherit;
 }
 
+/* ========== GALERÍA DE JUGADORES ========== */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -82,13 +159,17 @@ body {
 .card {
     background-color: #11142d;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease;
+    overflow: hidden;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
@@ -128,10 +209,6 @@ body {
     transform: translateX(0);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
 .insignia {
     display: block;
     margin-top: 6px;
@@ -139,7 +216,7 @@ body {
     color: #00ffff;
 }
 
-/* Clips */
+/* ========== CLIPS ========== */
 .clips {
     margin-top: 40px;
 }
@@ -157,7 +234,7 @@ video {
     border-radius: 10px;
 }
 
-/* Logros */
+/* ========== LOGROS ========== */
 .logros {
     margin-top: 40px;
 }
@@ -178,7 +255,7 @@ video {
     border-bottom: 1px solid #333;
 }
 
-/* Modo LIGHT */
+/* ========== MODO CLARO ========== */
 body.light-mode {
     background-color: #f5f5f5;
     color: #222;
@@ -224,71 +301,8 @@ body.light-mode .filtros button {
     border: 1px solid #444;
 }
 
-body.light-mode .filtros button::hover {
+body.light-mode .filtros button:hover {
     background-color: #444;
     color: #fff;
     box-shadow: 0 0 10px #777;
 }
-
-/* Botones */
-.botones-top {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    padding: 10px 20px;
-    position: sticky;
-    top: 8;
-    background-color: rgba(10,15,44,0.95);
-    z-index: 999;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-}
-
-.boton-control {
-    background-color: #1e1f33;
-    color: #4dcfff;
-    border: 1px solid #4dcfff;
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.boton-control:hover {
-    background-color: #4dcfff;
-    color: #0a0f2c;
-    box-shadow: 0 0 10px #4dcfff;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Filtros */
-.filtros {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.filtros button {
-    background-color: #1e1f33;
-    color: #4dcfff;
-    border: 1px solid #4dcfff;
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filtros button:hover {
-    background-color: #4dcfff;
-    color: #0a0f2c;
-}
-
