@@ -5,7 +5,7 @@ export function renderRuleta(jugadores) {
   const crearCarta = (j) => `
     <div class="flip-card">
       <div class="flip-card-inner">
-        <!-- PARTE FRONTAL (Minimalista) -->
+        <!-- Parte Frontal (Mínima) -->
         <div class="flip-card-front">
           <img src="${j.img}" alt="${j.nombre}">
           <h3>${j.nombre}</h3>
@@ -13,26 +13,35 @@ export function renderRuleta(jugadores) {
           ${j.horas ? `<div class="horas-front">${j.horas} horas</div>` : ''}
         </div>
 
-        <!-- PARTE TRASERA (Estadísticas) -->
+        <!-- Parte Trasera (Barras de Stats) -->
         <div class="flip-card-back">
-          <div class="stats-back">
-            <h4>OVERALL PLAY STYLE</h4>
-            <div class="stats-grid">
-              <div class="stat">
-                <span class="stat-value">${j.stats?.goals || '0'}%</span>
-                <span class="stat-label">Goals</span>
+          <h4>ESTILO DE JUEGO</h4>
+          
+          <!-- Barras de progreso -->
+          <div class="stat-bars">
+            <div class="stat-bar">
+              <label>Goles <span>${j.stats?.goals || '0'}%</span></label>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: ${j.stats?.goals || '0'}%; background: #ef4444;"></div>
               </div>
-              <div class="stat">
-                <span class="stat-value">${j.stats?.saves || '0'}%</span>
-                <span class="stat-label">Saves</span>
+            </div>
+            
+            <div class="stat-bar">
+              <label>Asistencias <span>${j.stats?.assists || '0'}%</span></label>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: ${j.stats?.assists || '0'}%; background: #3b82f6;"></div>
               </div>
-              <div class="stat">
-                <span class="stat-value">${j.stats?.assists || '0'}%</span>
-                <span class="stat-label">Assists</span>
+            </div>
+            
+            <div class="stat-bar">
+              <label>Atajadas <span>${j.stats?.saves || '0'}%</span></label>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: ${j.stats?.saves || '0'}%; background: #10b981;"></div>
               </div>
             </div>
           </div>
-          <a href="${j.tracker}" class="tracker-btn" target="_blank">Ver Tracker Completo</a>
+          
+          <a href="${j.tracker}" class="tracker-btn" target="_blank">Ver Tracker</a>
         </div>
       </div>
     </div>`;
