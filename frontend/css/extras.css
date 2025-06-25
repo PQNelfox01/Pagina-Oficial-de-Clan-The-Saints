@@ -1,0 +1,109 @@
+/* extras.css - Estilos Adicionales Específicos */
+/* =========================================== */
+
+/* 
+  Contiene solo estilos NUEVOS que no están en:
+  - base.css (reset/variables)
+  - components.css (componentes base)
+  - layout.css (estructura general)
+  - theme.css (modos claro/oscuro)
+  - responsive.css (media queries)
+*/
+
+/* === GALERÍA DE JUGADORES MEJORADA === */
+.galeria-jugadores .card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+/* Efecto hover de tarjeta */
+.galeria-jugadores .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen con zoom suave */
+.galeria-jugadores .card img {
+  transition: transform 0.5s ease;
+  transform-origin: center;
+}
+
+.galeria-jugadores .card:hover img {
+  transform: scale(1.1);
+}
+
+/* Ícono de streamer animado */
+.streamer-icon {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.galeria-jugadores .card:hover .streamer-icon {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Sección de estadísticas con efecto vidrio */
+.play-style {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.4s ease;
+}
+
+/* Efecto neón para stats */
+.stat-value {
+  text-shadow: 0 0 8px currentColor;
+}
+
+/* Colores temáticos para stats */
+.stat:nth-child(1) .stat-value { color: #ff6b6b; } /* Goals - Rojo */
+.stat:nth-child(2) .stat-value { color: #51cf66; } /* Saves - Verde */
+.stat:nth-child(3) .stat-value { color: #339af0; } /* Assists - Azul */
+
+/* === EFECTOS ESPECIALES === */
+/* Borde acento al hover */
+.galeria-jugadores .card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.galeria-jugadores .card:hover::after {
+  transform: scaleX(1);
+}
+
+/* === RESPONSIVE ADICIONAL === */
+@media (max-width: 480px) {
+  .play-style {
+    padding: 8px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+
+/* === MODOS DE COLOR ADICIONALES === */
+body.light-mode .play-style {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .play-style {
+  background: rgba(0, 0, 0, 0.3);
+}
