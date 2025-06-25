@@ -99,6 +99,58 @@
   opacity: 0.8;
 }
 
+/* === BARRAS DE ESTADÍSTICAS === */
+.flip-card-back {
+  padding: 20px;
+  text-align: center;
+}
+
+.flip-card-back h4 {
+  color: var(--accent);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.stat-bars {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 25px;
+}
+
+.stat-bar {
+  margin-bottom: 15px;
+}
+
+.stat-bar label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.stat-bar label span {
+  font-weight: bold;
+}
+
+.bar-container {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Colores temáticos (opcionales) */
+.stat-bar:nth-child(1) .bar-fill { background: #ef4444; } /* Goles */
+.stat-bar:nth-child(2) .bar-fill { background: #3b82f6; } /* Asistencias */
+.stat-bar:nth-child(3) .bar-fill { background: #10b981; } /* Atajadas */
+
 /* Contenedor Ruleta */
 .galeria-secundaria .flip-card {
   perspective: 1000px;
