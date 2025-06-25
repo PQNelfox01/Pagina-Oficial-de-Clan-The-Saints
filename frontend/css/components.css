@@ -62,6 +62,90 @@
   font-size: 12px;
 }
 
+/* === GALERÍA PRINCIPAL === */
+.galeria-principal {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.galeria-jugadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.galeria-jugadores .card {
+    background-color: var(--bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.galeria-jugadores .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+.galeria-jugadores .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--accent);
+}
+
+.galeria-jugadores .info {
+    padding: 15px;
+    text-align: center;
+}
+
+.galeria-jugadores .info p {
+    margin: 10px 0;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.galeria-jugadores .info a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.galeria-jugadores .info a:hover {
+    background-color: var(--accent-light);
+    transform: scale(1.05);
+}
+
+.insignia {
+    display: block;
+    margin: 8px 0;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.estado-stream {
+    display: block;
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.estado-stream.online {
+    color: #00ff00;
+}
+
+.estado-stream.offline {
+    color: #ff5555;
+}
+
 /* === SECCIÓN FLIP/RULETA === */
 .galeria-secundaria {
   margin-top: 60px;
