@@ -35,12 +35,17 @@ body.light-mode .nav-top .boton-control:hover {
 }
 
 /* NAV LATERAL */
+
 body.light-mode .nav-lateral {
   background: linear-gradient(180deg, #4dcfff, #0a81c2);
   color: white;
   box-shadow: 2px 0 12px rgba(13, 96, 151, 0.4);
   border-radius: 0 12px 12px 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* BOTONES NAV LATERAL */
 body.light-mode .nav-lateral button {
