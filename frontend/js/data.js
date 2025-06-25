@@ -4,16 +4,13 @@ export const jugadores = [
     nombre: "Ziir",
     desc: "Rey de la rotación.",
     img: "/img/Foto-Ziir.png",
-    tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198091825758/overview",
-    streamer: false,
-    enVivo: false,
-    logrosDestacados: true,
     horas: 2900,
     stats: {
       goals: 47.98,
-      saves: 33.75,
-      assists: 18.27
-    }
+      assists: 18.27,
+      saves: 33.75
+    },
+    tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198091825758/overview",
   },
   {
     nombre: "Bksp",
