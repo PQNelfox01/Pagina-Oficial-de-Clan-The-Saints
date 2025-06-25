@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       streamer: false,
       enVivo: false,
       logrosDestacados: false,
-      horas: false
+      horas: 1748
     },
     {
       nombre: "PQNelfox01",
