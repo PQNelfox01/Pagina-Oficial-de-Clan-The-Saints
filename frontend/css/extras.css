@@ -1,5 +1,11 @@
-/* extras.css - Estilos Específicos para Galería Secundaria (Ruleta) */
-/* ================================================================ */
+/* extras.css - Estilos Específicos para Ruleta de Jugadores */
+/* ======================================================== */
+
+/* ESTRUCTURA BASE */
+.galeria-secundaria .flip-card {
+  perspective: 1000px;
+  margin: 15px;
+}
 
 /* PARTE FRONTAL */
 .flip-card-front {
@@ -7,8 +13,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 20px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
 }
 
 .flip-card-front img {
@@ -16,105 +24,45 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
   border: 3px solid var(--accent);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.flip-card:hover .flip-card-front img {
+  transform: scale(1.1);
 }
 
 .horas-front {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 0.9rem;
   color: var(--accent);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-/* PARTE TRASERA */
+/* PARTE TRASERA - ESTILO DE JUEGO */
 .flip-card-back {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 20px;
-}
-
-.stats-back {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.stats-back h4 {
-  color: var(--accent);
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-value {
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: block;
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-}
-
-/* Colores */
-.stat:nth-child(1) .stat-value { color: #ff6b6b; } /* Goals */
-.stat:nth-child(2) .stat-value { color: #51cf66; } /* Saves */
-.stat:nth-child(3) .stat-value { color: #339af0; } /* Assists */
-
-.tracker-btn {
-  margin-top: 20px;
-}
-
-.flip-card-footer {
-  margin-top: auto;
-  text-align: center;
-}
-
-.horas-jugadas {
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-top: 5px;
-}
-
-.streamer-icon {
-  font-size: 0.8em;
-  opacity: 0.8;
-}
-
-/* === BARRAS DE ESTADÍSTICAS === */
-.flip-card-back {
-  padding: 20px;
-  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
 }
 
 .flip-card-back h4 {
   color: var(--accent);
+  text-align: center;
   margin-bottom: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* BARRAS DE ESTADÍSTICAS */
 .stat-bars {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   margin: 0 auto 25px;
 }
 
@@ -125,8 +73,9 @@
 .stat-bar label {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
-  margin-bottom: 5px;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--text-primary);
 }
 
 .stat-bar label span {
@@ -135,7 +84,7 @@
 
 .bar-container {
   height: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -146,104 +95,59 @@
   transition: width 0.5s ease;
 }
 
-/* Colores temáticos (opcionales) */
+/* COLORES DE BARRAS */
 .stat-bar:nth-child(1) .bar-fill { background: #ef4444; } /* Goles */
 .stat-bar:nth-child(2) .bar-fill { background: #3b82f6; } /* Asistencias */
 .stat-bar:nth-child(3) .bar-fill { background: #10b981; } /* Atajadas */
 
-/* Contenedor Ruleta */
-.galeria-secundaria .flip-card {
-  perspective: 1000px;
-  margin: 15px;
-}
-
-/* Parte Frontal - Estadísticas */
-.galeria-secundaria .flip-card-front {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Overall Play Style - Posicionamiento */
-.galeria-secundaria .stats-container {
-  margin-top: 15px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-}
-
-.galeria-secundaria .stats-title {
-  color: var(--accent);
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Grid de Stats */
-.galeria-secundaria .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.galeria-secundaria .stat {
-  text-align: center;
-  padding: 8px;
-}
-
-.galeria-secundaria .stat-value {
-  font-weight: bold;
-  font-size: 1rem;
+/* BOTÓN TRACKER */
+.tracker-btn {
   display: block;
-}
-
-.galeria-secundaria .stat-label {
-  font-size: 0.7rem;
-  opacity: 0.8;
-}
-
-/* Colores Temáticos */
-.galeria-secundaria .stat-goals .stat-value { color: #ff6b6b; }
-.galeria-secundaria .stat-saves .stat-value { color: #51cf66; }
-.galeria-secundaria .stat-assists .stat-value { color: #339af0; }
-
-/* Posición de Horas y Tracker */
-.galeria-secundaria .flip-card-footer {
-  margin-top: auto;
-  padding-top: 15px;
-}
-
-.galeria-secundaria .tracker-btn {
-  display: block;
-  margin: 0 auto;
   width: max-content;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.galeria-secundaria .horas-jugadas {
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 8px;
-  opacity: 0.8;
+.tracker-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--accent);
 }
 
-/* Efectos de Hover */
-.galeria-secundaria .flip-card:hover .stats-container {
-  background: rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .galeria-secundaria .stats-grid {
-    grid-template-columns: 1fr;
+/* MODO CLARO ESPECÍFICO */
+body.light-mode {
+  .flip-card-front,
+  .flip-card-back {
+    background: white;
+    border: 1px solid #e2e8f0;
   }
   
-  .galeria-secundaria .stat {
-    padding: 5px;
+  .bar-container {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .stat-bar label {
+    color: #2d3748;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .flip-card-front img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .stat-bars {
+    max-width: 240px;
+  }
+  
+  .stat-bar label {
+    font-size: 0.75rem;
   }
 }

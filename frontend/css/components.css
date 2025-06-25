@@ -11,44 +11,41 @@
     margin-top: 30px;
 }
 
-.galeria-jugadores .card {
-    background-color: var(--bg-card);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--border-card);
+.galeria-principal .card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border-card);
 }
 
-.galeria-jugadores .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border-color: var(--accent);
+.galeria-principal .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-.galeria-jugadores .card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-bottom: 2px solid var(--accent);
+.galeria-principal .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--accent);
 }
 
-.galeria-jugadores .info {
-    padding: 16px;
-    text-align: center;
+.galeria-principal .info {
+  padding: 15px;
 }
 
-.galeria-jugadores .info h3 {
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    font-size: 1.1rem;
+.galeria-principal .info h3 {
+  color: var(--accent);
+  margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 
-.galeria-jugadores .info p {
-    color: var(--text-primary);
-    opacity: 0.9;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
+.galeria-principal .info p {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 .galeria-jugadores .info a {

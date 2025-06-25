@@ -20,23 +20,23 @@ export function renderRuleta(jugadores) {
           <!-- Barras de progreso -->
           <div class="stat-bars">
             <div class="stat-bar">
-              <label>Goles <span>${j.stats?.goals || '0'}%</span></label>
+              <label>⚽ Goles <span>${j.stats?.goals || '0'}%</span></label>
               <div class="bar-container">
-                <div class="bar-fill" style="width: ${j.stats?.goals || '0'}%; background: #ef4444;"></div>
+                <div class="bar-fill goals-bar" style="width: ${j.stats?.goals || '0'}%"></div>
               </div>
             </div>
             
             <div class="stat-bar">
-              <label>Asistencias <span>${j.stats?.assists || '0'}%</span></label>
+              <label>🎯 Asistencias <span>${j.stats?.assists || '0'}%</span></label>
               <div class="bar-container">
-                <div class="bar-fill" style="width: ${j.stats?.assists || '0'}%; background: #3b82f6;"></div>
+                <div class="bar-fill assists-bar" style="width: ${j.stats?.assists || '0'}%"></div>
               </div>
             </div>
             
             <div class="stat-bar">
-              <label>Atajadas <span>${j.stats?.saves || '0'}%</span></label>
+              <label>🧤 Atajadas <span>${j.stats?.saves || '0'}%</span></label>
               <div class="bar-container">
-                <div class="bar-fill" style="width: ${j.stats?.saves || '0'}%; background: #10b981;"></div>
+                <div class="bar-fill saves-bar" style="width: ${j.stats?.saves || '0'}%"></div>
               </div>
             </div>
           </div>
