@@ -1,10 +1,25 @@
-/* === MODO CLARO ACTIVADO === */
+/* === MODO CLARO === */
 body.light-mode {
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-light);
+    color: var(--text-primary-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --bg-card: var(--bg-card-light);
+    --border-card: var(--border-card-light);
 }
+
+body.light-mode .galeria-jugadores .card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+body.light-mode .estado-stream.online {
+    color: #059669;
+}
+
+body.light-mode .estado-stream.offline {
+    color: #dc2626;
+}
+
 
 /* NAV TOP */
 body.light-mode .nav-top {

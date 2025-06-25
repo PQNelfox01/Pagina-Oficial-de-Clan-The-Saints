@@ -1,12 +1,23 @@
 :root {
-    --bg-dark: #0a0f2c;
-    --gb-darker: #11142d;
-    --text-light: #fff;
-    --accent: #4dcfff;
-    --text-dark: #222;
-    --bg-light: #f5f5f5;
-    --bg-light-nav: #f3f3f3;
-    --text-light-dark: #111;
+    /* Colores base */
+    --accent: #3b82f6;
+    --accent-light: #60a5fa;
+    --accent-dark: #1d4ed8;
+    
+    /* Modo claro */
+    --bg-light: #f5f7fa;
+    --bg-card-light: #ffffff;
+    --border-card-light: #e1e8ed;
+    --text-primary-light: #2d3748;
+    --text-secondary-light: #4a5568;
+    
+    /* Modo oscuro */
+    --bg-dark: #0f172a;
+    --bg-darker: #1e293b;
+    --bg-card-dark: #1e293b;
+    --border-card-dark: #334155;
+    --text-primary-dark: #e2e8f0;
+    --text-secondary-dark: #94a3b8;
 }
 
 * {
@@ -18,7 +29,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--text-primary-dark);
     padding: 20px;
     scroll-behavior: smooth;
     animation: fadeIn 1s ease;
@@ -29,7 +40,6 @@ body {
     to { opacity: 1; }
 }
 
-/* Añadido global para todos los links */
 a {
     color: var(--accent);
     text-decoration: none;
@@ -37,5 +47,5 @@ a {
 }
 
 a:hover {
-    color: #00bfff;
+    color: var(--accent-light);
 }
