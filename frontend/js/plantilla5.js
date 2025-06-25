@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       streamer: true,
       enVivo: false,
       logrosDestacados: false,
-      horas: false
+      horas: 2718
     },
     {
       nombre: "Alejjoh",
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (filtro === "logros") {
         filtrados = jugadores.filter(j => j.logrosDestacados);
       } else if (filtro === "horas") {
-        filtrados = jugadores.filter(j => j.horas >= 2000);
+        filtrados = jugadores.filter(j => j.horas >= 1000);
       }
 
       renderizar(filtrados);
