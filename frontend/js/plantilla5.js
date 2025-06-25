@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nombre: "Ziir",
       desc: "Rey de la rotación.",
-      img: "img/ziir.png",
+      img: "/frontend/img/Foto-Ziir.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198091825758/overview",
       streamer: false,
       enVivo: false,
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nombre: "Kenkyomasu",
       desc: '"El ser incomprendido."',
-      img: "img/kenkyo.png",
+      img: "/frontend/img/Foto-Kenkyo.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/kenkyomasu/overview",
       streamer: true,
       enVivo: false,
