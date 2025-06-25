@@ -12,6 +12,6 @@ export function renderGaleria(jugadores) {
         </div>
       </div>
     `;
-    contenedor.insertAdjacentHTML("beforeend", cardHTML);
+    contenedor.appendChild(cardHTML);
   });
 }
