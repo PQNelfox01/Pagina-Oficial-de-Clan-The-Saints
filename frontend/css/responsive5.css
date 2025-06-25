@@ -51,3 +51,21 @@
         font-size: 20px;
     }
 }
+
+/* ========== CARRUSEL MOBILE FIX ========== */
+@media (max-width: 480px) {
+    .carrusel-card {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .card-front h3,
+    .card-back h4 {
+        font-size: 16px;
+    }
+
+    .card-front p,
+    .card-back p {
+        font-size: 13px;
+    }
+}

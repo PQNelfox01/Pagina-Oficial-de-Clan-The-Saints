@@ -1,0 +1,857 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNTS || Plantilla 5</title>
+    <link rel="stylesheet" href="/frontend/css/plantilla5.css">
+    <link rel="stylesheet" href="/frontend/css/responsive5.css">
+</head>
+<body class="light-mode">
+    
+    <!-- Botones superiores -->
+     <nav class="nav-top">
+        <a href="/frontend/index.html" class="boton-control">← Volver al Lobby</a>
+        <button id="toggleModo" class="boton-control">🌓 Cambia modo</button>
+        <button id="idiomaBtn" class="boton-control">🌐 EN/ES</button>
+        <button id="presentacionBtn" class="boton-control">🎥 Presentacion</button>
+        <button id="abrirMenu" class="boton-control">☰ Menú</button>
+    </nav>
+    
+    <nav id="navLateral" class="nav-lateral">
+        <button class="cerrar-menu" id="cerrarMenu">✖</button>
+        <button data-filtro="todos"> Todos</button>
+        <button data-filtro="streamers"> streamers</button>
+        <button data-filtro="logros"> Logros</button>
+        <button data-filtro="horas"> Tiempo de Juego</button>
+    </nav>
+
+    <main>
+        <h1 class="titulo" data-en="SNTS Clan - Enharced Showcase">Clan SNTS - Plantilla Mejorada</h1>
+        
+    
+        <div class="galeria" id="galeria-jugadores">
+            <!-- Contenido generado por JS -->
+        </div>
+
+        <section class="galeria-secundaria">
+            <h2 class="titulo">💫 Ruleta de Jugadores</h2>
+            <div class="flip-card-galeria"></div>
+        </section>
+
+    
+        <section class="clips">
+            <h2 data-en="Top Goals & Plays">Clips del Clan</h2>
+            <video src="/frontend/videos/Alejjoh_Clip(01).mp4" controls></video>
+        </section>
+        
+        <section class="logros">
+            <h2 data-en="Clan Achivements">Logros del Clan</h2>
+            <ul>
+                <li data-en="Top 8 in Sudamerican Open (May 2024)">Top 8 en Sudamerican Open (Mayo 2024)</li>
+                <li data-en="Campeones del Torneo Nocturno (Feb 2024)">Campeones del Torneo Nocturno (Febrero 2024)</li>
+                <li data-en="Mejor asistencia media por jugador">Mejor asistencia media por jugador</li>
+                <li data-en="Rotaciones más limpias según análisis interno">Rotaciones más limpias según análisis interno</li>
+            </ul>
+        </section>
+
+    </main>
+    
+    <script src="/frontend/js/plantilla5.js"></script>
+</body>
+</html>
+```
+
+``CSS
+/* ========== BASE ========== */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0f2c;
+    color: #fff;
+    scroll-behavior: smooth;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========== NAV SUPERIOR ========== */
+.nav-top {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 20px;
+    background-color: rgba(10,15,44,0.95);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+}
+
+/* ========== NAV LATERAL ========== */
+.nav-lateral {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #1e1f33;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-lateral.abierto {
+    left: 0;
+}
+
+.nav-lateral button,
+.cerrar-menu {
+    background-color: #4dcfff;
+    color: #0a0f2c;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.nav-lateral button:hover {
+    background-color: #34bde0;
+}
+
+.cerrar-menu {
+    align-self: flex-end;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+body.menu-abierto main {
+    margin-left: 260px;
+    transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    body.menu-abierto main {
+        margin-left: 0;
+    }
+}
+
+/* ========== BOTONES ========== */
+.botones-top {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 20px;
+    position: sticky;
+    top: 8px;
+    background-color: rgba(10, 15, 44, 0.95);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+}
+
+.boton-control {
+    background-color: #1e1f33;
+    color: #4dcfff;
+    border: 1px solid #4dcfff;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.boton-control:hover {
+    background-color: #4dcfff;
+    color: #0a0f2c;
+    box-shadow: 0 0 10px #4dcfff;
+}
+
+/* ========== FILTROS ========== */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros button {
+    background-color: #1e1f33;
+    color: #4dcfff;
+    border: 1px solid #4dcfff;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtros button:hover {
+    background-color: #4dcfff;
+    color: #0a0f2c;
+}
+
+/* ========== TITULOS ========== */
+.titulo {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+/* ========== GALERÍA DE JUGADORES ========== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: #11142d;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.card .info {
+    padding: 12px;
+    text-align: center;
+}
+
+.card p {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #4dcfff;
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.card a::after {
+    content: " ->";
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: 0.3s ease;
+}
+
+.card a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.insignia {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #00ffff;
+}
+
+/* ========== SECCIÓN DE CARRUSEL AJUSTADA ========== */
+.seccion-carrusel {
+    padding: 60px 20px;
+    background-color: #0a0f2c;
+    position: relative;
+    z-index: 1;
+}
+
+.seccion-carrusel .titulo {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ========== Galeria - Secundaria ========== */
+.galeria-secundaria {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background-color: #0a0f2c;
+    border-radius: 20px;
+    box-shadow: inset 0 0 40px rgba(77,207,255,0.1);
+}
+
+.flip-card-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 240px;
+    height: 320px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #4dcfff;
+    background-color: #11142d;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.flip-card-front h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.flip-card-front p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h4 {
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    margin: 5px 0;
+}
+
+.flip-card-back a {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #4dcfff;
+    color: #0a0f2c;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ========== Ruleta (tipo Pokémon TCG Pocket) ========== */
+.ruleta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 60px auto;
+    max-width: 600px;
+    height: 300px;
+}
+
+.ruleta .carta {
+    width: 200px;
+    height: 280px;
+    perspective: 1000px;
+    transition: transform 0.5s ease;
+}
+
+.ruleta .carta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(77, 207, 255, 0.5);
+}
+
+.ruleta-controles {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.ruleta-controles button {
+    background-color: transparent;
+    color: #4dcfff;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    pointer-events: all;
+}
+
+.ruleta-controles button:hover {
+    transform: scale(1.2);
+}
+
+
+/* ========== CLIPS ========== */
+.clips {
+    margin-top: 40px;
+}
+
+.clips h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+video {
+    display: block;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* ========== LOGROS ========== */
+.logros {
+    margin-top: 40px;
+}
+
+.logros h2 {
+    text-align: center;
+}
+
+.logros ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.logros li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+
+/* ========== MODO CLARO ========== */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+body.light-mode .nav-top,
+body.light-mode .nav-lateral {
+    background-color: #f3f3f3;
+}
+
+body.light-mode .nav-lateral button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.light-mode .cerrar-menu {
+    color: #000;
+}
+
+body.light-mode .card {
+    background-color: #fff;
+}
+
+body.light-mode .titulo {
+    color: #111;
+}
+
+body.light-mode .boton-control {
+    background-color: #e3e3e3;
+    color: #111;
+    border: 1px solid #444;
+}
+
+body.light-mode .boton-control:hover {
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 0 10px #777;
+}
+
+body.light-mode .filtros button {
+    background-color: #e3e3e3;
+    color: #111;
+    border: 1px solid #444;
+}
+
+body.light-mode .filtros button:hover {
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 0 10px #777;
+}
+
+body.light-mode .galeria-secundaria {
+    background-color: #f4f4f9;
+}
+
+body.light-mode .flip-card-front,
+body.light-mode .flip-card-back {
+    background-color: #ffffff;
+    color: #111;
+}
+
+body.light-mode .flip-card-back a {
+    background-color: #4dcfff;
+    color: #000;
+}
+
+``
+
+`` responsive
+/* Tablet (hasta 768px) */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .card p,
+    .card a {
+        font-size: 13px;
+    }
+
+    .titulo {
+        font-size: 22px;
+    }
+
+    .boton-control {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    video {
+        width: 100%;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+
+    .card a {
+        font-size: 11px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+}
+
+/* ========== CARRUSEL MOBILE FIX ========== */
+@media (max-width: 480px) {
+    .carrusel-card {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .card-front h3,
+    .card-back h4 {
+        font-size: 16px;
+    }
+
+    .card-front p,
+    .card-back p {
+        font-size: 13px;
+    }
+}
+
+``
+
+`` JS
+// === NAV LATERAL (Abrir / Cerrar) ==
+document.getElementById("abrirMenu").addEventListener("click", () => {
+  document.getElementById("navLateral").classList.add("abierto");
+  document.body.classList.add("menu-abierto");
+});
+
+document.getElementById("cerrarMenu").addEventListener("click", () => {
+  document.getElementById("navLateral").classList.remove("abierto");
+  document.body.classList.remove("menu-abierto"); // CORREGIDO
+});
+
+// === DOM CARGADO ===
+document.addEventListener("DOMContentLoaded", () => {
+  const jugadores = [
+    {
+      nombre: "Ziir",
+      desc: "Rey de la rotación.",
+      img: "/frontend/img/Foto-Ziir.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198091825758/overview",
+      streamer: false,
+      enVivo: false,
+      logrosDestacados: true,
+      horas: 2900
+    },
+    {
+      nombre: "Bksp",
+      desc: '"El Lloressy"',
+      img: "/frontend/img/Foto-Bksp.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Bksp/overview",
+      streamer: true,
+      enVivo: false,
+      logrosDestacados: true,
+      horas: 2945
+    },
+    {
+      nombre: "R.K.X",
+      desc: '"Turbo Roka"',
+      img: "/frontend/img/Foto-R.K.X.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/R%20.%20K%20.%20X/overview",
+      streamer: true,
+      enVivo: false,
+      logrosDestacados: true,
+      horas: 2970
+    },
+    {
+      nombre: "Kenkyomasu",
+      desc: '"El ser incomprendido."',
+      img: "/frontend/img/Foto-Kenkyo.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/kenkyomasu/overview",
+      streamer: true,
+      enVivo: false,
+      logrosDestacados: false,
+      horas: 2718
+    },
+    {
+      nombre: "Alejjoh",
+      desc: '"El Parce"',
+      img: "/frontend/img/Foto-Alejjohorny.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/xbl/alejjoh/overview",
+      streamer: false,
+      enVivo: false,
+      logrosDestacados: false,
+      horas: false
+    },
+    {
+      nombre: "Claudioxzt2",
+      desc: '"Qué terrible chiquillos."',
+      img: "/frontend/img/Foto-Claudioxzt2.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198145230003/overview",
+      streamer: false,
+      enVivo: false,
+      logrosDestacados: false,
+      horas: 1967
+    },
+    {
+      nombre: "Palasutro",
+      desc: '"Faker"',
+      img: "/frontend/img/Foto-Palasutro.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Fernando_pala/overview",
+      streamer: false,
+      enVivo: false,
+      logrosDestacados: false,
+      horas: 1748
+    },
+    {
+      nombre: "PQNelfox01",
+      desc: '"El Mute"',
+      img: "/frontend/img/Foto-PQNelfox01.png",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Tochka-U/overview",
+      streamer: true,
+      enVivo: false,
+      logrosDestacados: false,
+      horas: 1927
+    }
+  ];
+
+  const contenedor = document.getElementById("galeria-jugadores");
+
+  // === FUNCION PARA RENDERIZAR LAS CARDS ===
+  function renderizar(jugadoresFiltrados) {
+    contenedor.innerHTML = ""; // Limpia la galería
+
+    jugadoresFiltrados.forEach(j => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${j.img}" alt="${j.nombre}">
+        <div class="info">
+          <p><strong>${j.nombre}</strong> - ${j.desc}</p>
+          <a href="${j.tracker}" target="_blank">Ver en RL Tracker</a>
+          ${j.streamer ? `<span class="insignia">🎥 Streamer activo</span>` : ""}
+          ${j.streamer ? `
+            <span class="estado-stream ${j.enVivo ? 'online' : 'offline'}">
+              ${j.enVivo ? '🎥 En directo ahora' : '❌ Streamer desconectado'}
+            </span>` : ""}
+        </div>
+      `;
+      contenedor.appendChild(card);
+    });
+  }
+
+  // Render inicial
+  renderizar(jugadores);
+
+  // === FILTROS SUPERIORES ===
+  document.querySelectorAll(".filtros button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filtro = btn.getAttribute("data-filtro");
+
+      let filtrados = jugadores;
+      if (filtro === "streamers") {
+        filtrados = jugadores.filter(j => j.streamer);
+      } else if (filtro === "logros") {
+        filtrados = jugadores.filter(j => j.logrosDestacados);
+      } else if (filtro === "horas") {
+        filtrados = jugadores.filter(j => j.horas >= 1000);
+      }
+
+      renderizar(filtrados);
+    });
+  });
+
+  // === FILTROS DESDE NAV LATERAL ===
+  document.querySelectorAll(".nav-lateral button[data-filtro]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filtro = btn.getAttribute("data-filtro");
+
+      let filtrados = jugadores;
+      if (filtro === "streamers") {
+        filtrados = jugadores.filter(j => j.streamer);
+      } else if (filtro === "logros") {
+        filtrados = jugadores.filter(j => j.logrosDestacados);
+      } else if (filtro === "horas") {
+        filtrados = jugadores.filter(j => j.horas >= 1000);
+      }
+
+      renderizar(filtrados);
+
+      // Cierra el menú y remueve la clase
+      document.getElementById("navLateral").classList.remove("abierto");
+      document.body.classList.remove("menu-abierto");
+    });
+  });
+
+  // === MODO OSCURO/CLARO ===
+  document.getElementById("toggleModo").addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+  });
+
+  // === CAMBIO DE IDIOMA ===
+  document.getElementById("idiomaBtn").addEventListener("click", () => {
+    document.querySelectorAll("[data-en]").forEach(el => {
+      const actual = el.textContent;
+      el.textContent = el.getAttribute("data-en");
+      el.setAttribute("data-en", actual); // Intercambia los valores
+    });
+  });
+
+  // === MODO PRESENTACIÓN (SCROLL AL FINAL) ===
+  document.getElementById("presentacionBtn").addEventListener("click", () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  });
+
+    // === GALERÍA FLIP TIPO RULETA ===
+function renderRuleta(jugadores) {
+  const contenedor = document.getElementById("ruleta-container");
+  let index = 0;
+
+  const crearCarta = (jugador) => `
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="${jugador.img}" alt="${jugador.nombre}">
+          <h3>${jugador.nombre}</h3>
+          <p>${jugador.desc}</p>
+        </div>
+        <div class="flip-card-back">
+          <h4>Estadísticas</h4>
+          <p>Horas jugadas: ${jugador.horas || 'N/A'}</p>
+          <p>Streamer: ${jugador.streamer ? "✅" : "❌"}</p>
+          <a href="${jugador.tracker}" target="_blank">Ver Tracker</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const renderizarActual = () => {
+    contenedor.innerHTML = `
+      <div class="ruleta-wrapper">
+        <button class="ruleta-btn" id="ruleta-prev">◀</button>
+        ${crearCarta(jugadores[index])}
+        <button class="ruleta-btn" id="ruleta-next">▶</button>
+      </div>
+    `;
+
+    document.getElementById("ruleta-prev").addEventListener("click", () => {
+      index = (index - 1 + jugadores.length) % jugadores.length;
+      renderizarActual();
+    });
+
+    document.getElementById("ruleta-next").addEventListener("click", () => {
+      index = (index + 1) % jugadores.length;
+      renderizarActual();
+    });
+  };
+
+  renderizarActual()});
+
+``
