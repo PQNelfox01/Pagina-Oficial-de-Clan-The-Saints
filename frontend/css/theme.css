@@ -35,7 +35,6 @@ body.light-mode .nav-top .boton-control:hover {
 }
 
 /* NAV LATERAL */
-
 body.light-mode .nav-lateral {
   background: linear-gradient(180deg, #4dcfff, #0a81c2);
   color: white;
@@ -45,7 +44,6 @@ body.light-mode .nav-lateral {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* BOTONES NAV LATERAL */
 body.light-mode .nav-lateral button {
@@ -76,106 +74,4 @@ body.light-mode .cerrar-menu {
   cursor: pointer;
 }
 
-/* CARTAS */
-body.light-mode .card {
-  background: #ffffffdd;
-  color: #0a0a0a;
-  box-shadow: 0 4px 14px rgb(77 207 255 / 0.2);
-  border-radius: 12px;
-  transition: box-shadow 0.3s ease;
-}
-
-body.light-mode .card:hover {
-  box-shadow: 0 6px 24px rgb(77 207 255 / 0.4);
-}
-
-/* TITULOS */
-body.light-mode .titulo {
-  color: #004170;
-  text-shadow: 1px 1px 3px rgb(77 207 255 / 0.6);
-}
-
-/* BOTONES GENERALES */
-body.light-mode .boton-control {
-  background-color: #0a81c2;
-  color: white;
-  border-radius: 12px;
-  padding: 10px 18px;
-  font-weight: 600;
-  border: none;
-  box-shadow: 0 4px 12px rgb(77 207 255 / 0.7);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.light-mode .boton-control:hover {
-  background-color: #4dcfff;
-  box-shadow: 0 0 25px #4dcfff;
-  color: #004170;
-  cursor: pointer;
-}
-
-/* FILTROS */
-body.light-mode .filtros button {
-  background-color: #0a81c2;
-  color: white;
-  border-radius: 12px;
-  padding: 8px 16px;
-  font-weight: 600;
-  border: none;
-  margin-right: 8px;
-  box-shadow: 0 4px 12px rgb(77 207 255 / 0.7);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.light-mode .filtros button:hover {
-  background-color: #4dcfff;
-  box-shadow: 0 0 20px #4dcfff;
-  color: #004170;
-  cursor: pointer;
-}
-
-/* SECCIÓN SECUNDARIA */
-body.light-mode .galeria-secundaria {
-  background-color: #e8f5fc;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 2px 12px rgb(77 207 255 / 0.3);
-}
-
-/* FLIP CARDS */
-body.light-mode .flip-card-front,
-body.light-mode .flip-card-back {
-  background: #d6f0fc;
-  color: #004170;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgb(77 207 255 / 0.4);
-}
-
-body.light-mode .flip-card-back a {
-  background-color: #0a81c2;
-  color: white;
-  border-radius: 8px;
-  padding: 6px 14px;
-  display: inline-block;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-body.light-mode .flip-card-back a:hover {
-  background-color: #4dcfff;
-  color: #004170;
-}
-
-/* VIDEO CLIPS */
-body.light-mode video {
-  border: 2px solid #4dcfff;
-  border-radius: 12px;
-}
-
-/* LOGROS */
-body.light-mode .logros li {
-  border-bottom: 1px solid #a7d7f8;
-  padding: 8px 0;
-  color: #004170;
-  font-weight: 600;
-}
+/* Otros estilos que tengas para modo claro ... */
