@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       nombre: "Bksp",
-      desc: '""',
+      desc: '"El Lloressy"',
       img: "/frontend/img/Foto-Bksp.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Bksp/overview",
       streamer: true,
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       nombre: "R.K.X",
-      desc: '""',
+      desc: '"Turbo Roka"',
       img: "/frontend/img/Foto-R.K.X.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/R%20.%20K%20.%20X/overview",
       streamer: true,
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       nombre: "Alejjoh",
-      desc: '""',
+      desc: '"El Parce"',
       img: "/frontend/img/Foto-Alejjohorny.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/xbl/alejjoh/overview",
       streamer: false,
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       nombre: "Claudioxzt2",
-      desc: '""',
+      desc: '"Qué terrible chiquillos."',
       img: "/frontend/img/Foto-Claudioxzt2.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198145230003/overview",
       streamer: false,
@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       nombre: "Palasutro",
-      desc: '"El Sujeto"',
+      desc: '"Faker"',
       img: "/frontend/img/Foto-Palasutro.png",
-      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Palavecino./overview",
+      tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Fernando_pala/overview",
       streamer: false,
       enVivo: false,
       logrosDestacados: false,
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       nombre: "PQNelfox01",
-      desc: '""',
+      desc: '"El Mute"',
       img: "/frontend/img/Foto-PQNelfox01.png",
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Tochka-U/overview",
       streamer: true,
