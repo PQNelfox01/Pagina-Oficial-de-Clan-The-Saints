@@ -1,7 +1,7 @@
 // === DATOS DE JUGADORES ===
 export const jugadores = [
   { nombre: "Ziir", desc: "Rey de la rotación.", img: "/img/Foto-Ziir.png", tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198091825758/overview", streamer: false, enVivo: false, logrosDestacados: true, horas: 2900 },
-  { nombre: "Bksp", desc: "El Lloressy", img: "/img/Foto-Bksp.png", tracker: "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198091825758/overview", streamer: true, enVivo: false, logrosDestacados: true, horas: 2945},
+  { nombre: "Bksp", desc: "El Lloressy", img: "/img/Foto-Bksp.png", tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Bksp/overview", streamer: true, enVivo: false, logrosDestacados: true, horas: 2945},
   { nombre: "R.K.X", desc: "Turbo Roka", img: "/img/Foto-R.K.X.png", tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/R%20.%20K%20.%20X/overview", streamer: true, enVivo: false, logrosDestacados: true, horas: 2970},
   { nombre: "Kenkyomasu", desc: "El ser incomprendido.", img: "/img/Foto-Kenkyo.png", tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/kenkyomasu/overview", streamer: true, enVivo: false, logrosDestacados: false, horas: 2718},
   { nombre: "Alejjoh", desc: "El Parce", img: "/img/Foto-Alejjohorny.png", tracker: "https://rocketleague.tracker.network/rocket-league/profile/xbl/alejjoh/overview", streamer: false, enVivo: false, logrosDestacados: false, horas: false},
