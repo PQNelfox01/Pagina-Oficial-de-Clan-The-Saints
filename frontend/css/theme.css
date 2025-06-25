@@ -9,9 +9,17 @@ body.light-mode {
 }
 
 body.light-mode .galeria-jugadores .card {
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
 }
 
+body.light-mode .galeria-jugadores .info h3 {
+  color: #2d3748;
+}
+
+/* === MODO STREAM === */
 body.light-mode .estado-stream.online {
     color: #059669;
 }
@@ -23,7 +31,7 @@ body.light-mode .estado-stream.offline {
 /* === CORRECCIÓN RULETA MODO CLARO === */
 body.light-mode .galeria-secundaria {
   background-color: var(--bg-card-light); /* Usa el mismo fondo que las tarjetas */
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05); /* Sombra más sutil */
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05); /* Sombra más sutil */
   border: 1px solid var(--border-card-light); /* Borde coherente */
 }
 

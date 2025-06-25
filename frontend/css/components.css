@@ -94,10 +94,10 @@
 .galeria-secundaria {
   margin-top: 60px;
   padding: 40px 20px;
-  background-color: var(--bg-dark); /* Solo para modo oscuro */
+  background-color: var(--bg-card); /* Solo para modo oscuro */
   border-radius: 20px;
   box-shadow: inset 0 0 40px rgba(77, 207, 255, 0.1);
-  transition: all 0.5s ease; /* Transición suave al cambiar modo */
+  transition: background 0.5s ease; /* Transición suave al cambiar modo */
 }
 
 .flip-card-galeria {
@@ -207,8 +207,11 @@
 }
 
 /* === CLIPS DEL CLAN === */
-.clips {
-  margin-top: 40px;
+.grid-clips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .clips h2 {
@@ -217,11 +220,9 @@
 }
 
 video {
-  display: block;
-  margin: 0 auto 30px;
+  border-radius: 12px;
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
+  background: #000;
 }
 
 /* === LOGROS === */
@@ -241,10 +242,18 @@ video {
 }
 
 .logros li {
-  padding: 8px 0;
-  border-bottom: 1px solid #333;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
 }
 
+.logros li::before {
+  content: "🏆";
+  position: absolute;
+  left: 0;
+}
+
+/* === RULETA === */
 .ruleta-wrapper {
     display: flex;
     justify-content: center;
