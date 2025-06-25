@@ -1,11 +1,24 @@
+/* responsive.css */
+
+/* Ajustes para pantallas medianas */
 @media (max-width: 768px) {
   .galeria { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
   .card img { height: 160px; }
   .boton-control { font-size: 12px; padding: 6px 10px; }
   .titulo { font-size: 22px; }
   video { width: 100%; }
+
+  /* Menú lateral oculto por defecto y toggle */
+  .nav-lateral {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .nav-lateral.active {
+    transform: translateX(0);
+  }
 }
 
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 480px) {
   .galeria { grid-template-columns: 1fr; gap: 16px; }
   .card img { height: 150px; }
