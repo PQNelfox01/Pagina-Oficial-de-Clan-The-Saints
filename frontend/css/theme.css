@@ -1,0 +1,89 @@
+/* === MODO CLARO ACTIVADO === */
+body.light-mode {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* NAV TOP + NAV LATERAL */
+body.light-mode .nav-top,
+body.light-mode .nav-lateral {
+  background-color: var(--bg-light-nav);
+}
+
+/* BOTONES NAV LATERAL */
+body.light-mode .nav-lateral button {
+  background-color: #333;
+  color: #fff;
+}
+
+body.light-mode .cerrar-menu {
+  color: #000;
+}
+
+/* CARDS */
+body.light-mode .card {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .card a {
+  color: var(--accent);
+}
+
+/* TITULOS */
+body.light-mode .titulo {
+  color: var(--text-light-dark);
+}
+
+/* BOTONES GENERALES */
+body.light-mode .boton-control {
+  background-color: #e3e3e3;
+  color: #111;
+  border: 1px solid #444;
+}
+
+body.light-mode .boton-control:hover {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 0 10px #777;
+}
+
+/* BOTONES FILTROS */
+body.light-mode .filtros button {
+  background-color: #e3e3e3;
+  color: #111;
+  border: 1px solid #444;
+}
+
+body.light-mode .filtros button:hover {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 0 10px #777;
+}
+
+/* SECCIÓN SECUNDARIA */
+body.light-mode .galeria-secundaria {
+  background-color: #f4f4f9;
+}
+
+/* FLIP CARDS */
+body.light-mode .flip-card-front,
+body.light-mode .flip-card-back {
+  background-color: #ffffff;
+  color: #111;
+}
+
+body.light-mode .flip-card-back a {
+  background-color: var(--accent);
+  color: #000;
+}
+
+/* VIDEO CLIPS */
+body.light-mode video {
+  border: 1px solid #ccc;
+}
+
+/* LOGROS */
+body.light-mode .logros li {
+  border-bottom: 1px solid #ccc;
+}
