@@ -20,6 +20,19 @@ body.light-mode .estado-stream.offline {
     color: #dc2626;
 }
 
+/* === CORRECCIÓN RULETA MODO CLARO === */
+body.light-mode .galeria-secundaria {
+  background-color: var(--bg-card-light); /* Usa el mismo fondo que las tarjetas */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05); /* Sombra más sutil */
+  border: 1px solid var(--border-card-light); /* Borde coherente */
+}
+
+/* Asegurar que el texto sea visible */
+body.light-mode .galeria-secundaria .titulo,
+body.light-mode .galeria-secundaria .flip-card-front h3,
+body.light-mode .galeria-secundaria .flip-card-front p {
+  color: var(--text-primary-light);
+}
 
 /* NAV TOP */
 body.light-mode .nav-top {
