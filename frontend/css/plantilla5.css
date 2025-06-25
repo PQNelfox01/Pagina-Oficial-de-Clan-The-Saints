@@ -72,7 +72,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Ajuste de galeria cuando el menú está abierto */
 body.menu-abierto main {
     margin-left: 260px;
     transition: margin-left 0.3s ease;
