@@ -1,0 +1,19 @@
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary-dark);
+}
+
+body.dark-mode .galeria-principal .card,
+body.dark-mode .galeria-secundaria,
+body.dark-mode .flip-card-front,
+body.dark-mode .flip-card-back {
+  background-color: var(--bg-card-dark);
+  border: 1px solid var(--border-card-dark);
+}
+
+body.dark-mode .estado-stream.online {
+  color: #10b981;
+}
+body.dark-mode .estado-stream.offline {
+  color: #ef4444;
+}

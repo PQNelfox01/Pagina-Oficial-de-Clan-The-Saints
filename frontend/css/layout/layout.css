@@ -1,0 +1,13 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary-dark);
+    padding: 20px;
+    scroll-behavior: smooth;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

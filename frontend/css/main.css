@@ -1,0 +1,21 @@
+/* ==== BASE ==== */
+@import url("./base/reset.css");
+@import url("./base/variables.css");
+
+/* ==== COMPONENTS ==== */
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/nav.css");
+@import url("./components/ruleta.css");
+@import url("./components/video.css");
+
+/* ==== LAYOUT ==== */
+@import url("./layout/layout.css");
+@import url("./layout/responsive.css");
+
+/* ==== PAGES ==== */
+@import url("./pages/home.css"); /* index.html */
+
+/* ==== THEMES ==== */
+@import url("./themes/light.css");
+@import url("./themes/dark.css");

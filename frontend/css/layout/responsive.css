@@ -1,190 +1,126 @@
-/* responsive.css - Versión Mejorada */
-/* ============================================ */
-/* PANTALLAS MEDIANAS (Tablets, 768px o menos) */
-/* ============================================ */
+/* PANTALLAS MEDIANAS */
 @media (max-width: 768px) {
-  /* Ajustes generales */
-  body {
-    padding: 15px;
-  }
-
-  /* Barra de navegación superior */
+  body { padding: 15px; }
   .nav-top {
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
   }
-
   .boton-control {
     padding: 6px 12px;
     font-size: 13px;
   }
-
-  /* Galerías */
   .galeria,
   .galeria-jugadores {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
   }
-
-  /* Tarjetas de jugadores */
-  .card img {
-    height: 140px;
-  }
-
-  .galeria-jugadores .card img {
-    height: 150px;
-  }
-
-  /* Títulos */
+  .card img, .galeria-jugadores .card img { height: 140px; }
   .titulo {
     font-size: 22px;
     margin-bottom: 20px;
   }
-
-  /* Videos */
   video {
     max-width: 100%;
     margin-bottom: 20px;
   }
-
-  /* Menú lateral */
   .nav-lateral {
     width: 220px;
     padding: 15px;
   }
-
   body.menu-abierto main {
     margin-left: 230px;
   }
-
-  /* Ruleta de jugadores */
   .ruleta-wrapper {
     flex-direction: column;
   }
-
   .flip-card {
     width: 200px;
     height: 280px;
   }
 }
 
-/* ============================================ */
-/* PANTALLAS PEQUEÑAS (Móviles, 480px o menos) */
-/* ============================================ */
+/* PANTALLAS PEQUEÑAS */
 @media (max-width: 480px) {
-  /* Ajustes generales */
-  body {
-    padding: 10px;
-  }
-
-  /* Barra de navegación */
+  body { padding: 10px; }
   .nav-top {
     position: static;
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
   }
-
   .boton-control {
     width: 100%;
     text-align: center;
     padding: 8px;
   }
-
-  /* Galerías a una columna */
-  .galeria,
-  .galeria-jugadores {
+  .galeria, .galeria-jugadores {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-
-  /* Ajustes de tarjetas */
   .card {
     max-width: 100%;
   }
-
   .card img,
   .galeria-jugadores .card img {
     height: 130px;
   }
-
   .info p,
   .info a {
     font-size: 13px;
   }
-
-  /* Menú lateral (versión móvil) */
   .nav-lateral {
     width: 100%;
     left: -100%;
     border-radius: 0;
   }
-
   body.menu-abierto main {
     margin-left: 0;
     transform: translateX(100%);
   }
-
-  /* Títulos */
   .titulo {
     font-size: 20px;
     text-align: center;
   }
-
-  /* Sección de ruleta */
   .flip-card-galeria {
     gap: 15px;
   }
-
   .flip-card {
     width: 160px;
     height: 240px;
   }
-
-  /* Botones de ruleta */
   .ruleta-btn {
     font-size: 28px;
   }
-
-  /* Logros */
   .logros ul {
     padding: 0 15px;
   }
 }
 
-/* ============================================ */
-/* AJUSTES ESPECÍFICOS PARA ORIENTACIÓN HORIZONTAL */
-/* ============================================ */
+/* ORIENTACIÓN HORIZONTAL EN TABLET */
 @media (max-width: 768px) and (orientation: landscape) {
   .galeria-jugadores {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-
   .nav-top {
     position: static;
   }
-
   .card img {
     height: 100px;
   }
 }
 
-/* ============================================ */
-/* PANTALLAS MUY GRANDES (4K, 2560px o más) */
-/* ============================================ */
+/* 4K (muy grandes) */
 @media (min-width: 2560px) {
   body {
     max-width: 2000px;
     margin: 0 auto;
     padding: 40px;
   }
-
   .galeria-jugadores {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
   }
-
   .card img {
     height: 200px;
   }

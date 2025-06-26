@@ -1,0 +1,20 @@
+estructura carpetas css
+carpeta css
+carpeta base (dentro de carpeta css)
+-reset.css
+-variables.css
+carpeta components (dentro de carpeta css)
+-buttons.css
+-cards.css
+-nav.css
+-ruleta.css
+-video.css
+carpeta layout (dentro de carpeta css)
+-layout.css
+-responsive.css
+carpeta pages (dentro de carpeta css)
+-home.css
+carpeta themes (dentro de carpeta css)
+-dark.css
+-light.css
+main.css (dentro de carpeta css)

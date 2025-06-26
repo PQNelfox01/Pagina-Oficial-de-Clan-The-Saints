@@ -1,0 +1,50 @@
+.galeria-principal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+.galeria-principal .card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.galeria-principal .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.galeria-principal .card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--accent);
+}
+
+.galeria-principal .info {
+  padding: 12px;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.galeria-principal .info h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.galeria-principal .info p {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  opacity: 0.9;
+  line-height: 1.3;
+}
