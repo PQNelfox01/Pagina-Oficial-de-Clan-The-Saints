@@ -133,3 +133,31 @@
     height: 100px;
   }
 }
+
+.ruleta-empty {
+  padding: 20px;
+  color: var(--accent);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.ruleta-stat {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 5px;
+}
+
+/* Mejoras para touch en móviles */
+.ruleta-carousel {
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Efecto para items */
+.ruleta-item {
+  transition: transform 0.3s ease;
+}
+
+.ruleta-item:hover {
+  transform: translateY(-5px);
+}

@@ -1,5 +1,6 @@
 // Importaciones de datos
-import { jugadores, estadisticasJugador } from './data/jugadores.js';
+import { jugadores } from './data/jugadores.js';
+import { renderRuleta } from './modules/ruleta.js';
 
 // Importaciones de módulos
 import { renderGaleria } from './modules/galeria.js';
@@ -13,10 +14,8 @@ import {
 
 // Inicialización de la aplicación
 document.addEventListener("DOMContentLoaded", () => {
-  // Renderizar componentes principales
-  renderGaleria(jugadores);
+  console.log('Jugadores cargados:', jugadores); // Debug
   renderRuleta(jugadores);
-  renderLogros();
   
   // Renderizar estadísticas del jugador
   renderStats(estadisticasJugador);
