@@ -18,4 +18,13 @@
     --border-card-dark: #334155;
     --text-primary-dark: #e2e8f0;
     --text-secondary-dark: #94a3b8;
+
+    /* Colores para las estadísticas */
+    --stat-goals: #4ade80;
+    --stat-assists: #60a5fa;
+    --stat-saves: #f472b6;
+    --stat-bg: linear-gradient(135deg, #1e293b, #0f172a);
+    --stat-text: #ffffff;
+    --stat-highlight: #38bdf8;
+    --stat-progress-bg: #334155;
 }

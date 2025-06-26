@@ -97,3 +97,26 @@ export const jugadores = [
       tracker: "https://rocketleague.tracker.network/rocket-league/profile/epic/Tochka-U/overview" 
     }
 ];
+
+// Función para actualizar las estadísticas en el DOM
+export const renderStats = (stats) => {
+  const container = document.querySelector('.stats-container');
+  
+  if (container) {
+    container.innerHTML = `
+      <div class="stats-title">ESTILO DE JUEGO</div>
+      
+      <div class="stat-item goles">
+        <div class="stat-header">
+          <span class="stat-name">Goles</span>
+          <span class="stat-value">${stats.goles}%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: ${stats.goles}%"></div>
+        </div>
+      </div>
+      
+      <!-- Resto de las estadísticas -->
+    `;
+  }
+};
