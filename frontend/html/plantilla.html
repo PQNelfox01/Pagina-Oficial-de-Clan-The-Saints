@@ -41,33 +41,49 @@
         <h1 class="titulo" data-en="SNTS Clan - Enhanced Showcase">Clan SNTS - Plantilla Oficial</h1>
 
         <!-- Añade esto en tu plantilla.html dentro del <main> -->
-        <section class="stats-container">
-            <div class="player-header">
-                <h2 class="player-name">R.K.X</h2>
-                <p class="player-subtitle">Turbo Roka</p>
-            </div>
-        
-        <h3 class="stats-title">ESTILO DE JUEGO</h3>
-        
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-label">Goles</span>
-                <span class="stat-value">47.98%</span>
-            </div>
-            
-            <div class="stat-item">
-                <span class="stat-label">Asistencias</span>
-                <span class="stat-value">18.27%</span>
-            </div>
-            
-            <div class="stat-item">
-                <span class="stat-label">Atajadas</span>
-                <span class="stat-value">33.75%</span>
-            </div>
-        </div>
-        
-        <button class="tracker-btn">Ver Tracker</button>
-        </section>
+<section id="player-stats" class="player-card" style="display: none;">
+  <div class="player-header">
+    <img class="player-avatar" src="" alt="Avatar del jugador">
+    <h2 class="player-name"></h2>
+    <p class="player-desc"></p>
+  </div>
+  
+  <h3 class="stats-title">ESTILO DE JUEGO</h3>
+  
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-row">
+        <span class="stat-label">Goles</span>
+        <span class="stat-value stat-goals"></span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill progress-goals"></div>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-row">
+        <span class="stat-label">Asistencias</span>
+        <span class="stat-value stat-assists"></span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill progress-assists"></div>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-row">
+        <span class="stat-label">Atajadas</span>
+        <span class="stat-value stat-saves"></span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill progress-saves"></div>
+      </div>
+    </div>
+  </div>
+  
+  <a href="#" class="tracker-btn" target="_blank">Ver Tracker</a>
+</section>
 
         <section class="clips">
             <h2 class="titulo-seccion" data-en="Top Goals & Plays">🎬 Clips Épicos</h2>
