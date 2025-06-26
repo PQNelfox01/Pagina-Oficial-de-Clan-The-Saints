@@ -38,6 +38,27 @@
     width: 200px;
     height: 280px;
   }
+
+  /* Estilos responsivos para la ruleta */
+  .ruleta-container {
+    padding: 20px 15px;
+    margin: 30px 15px;
+  }
+  
+  .ruleta-item {
+    min-width: 140px;
+  }
+  
+  .ruleta-item img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .ruleta-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
 }
 
 /* PANTALLAS PEQUEÑAS */
@@ -95,6 +116,28 @@
   .logros ul {
     padding: 0 15px;
   }
+
+  /* Estilos responsivos para la ruleta */
+  .ruleta-container h2 {
+    font-size: 1.7rem;
+  }
+  
+  .ruleta-carousel {
+    gap: 15px;
+  }
+  
+  .ruleta-item {
+    min-width: 110px;
+  }
+  
+  .ruleta-item img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .ruleta-item p {
+    font-size: 1rem;
+  }
 }
 
 /* ORIENTACIÓN HORIZONTAL EN TABLET */
@@ -107,6 +150,16 @@
   }
   .card img {
     height: 100px;
+  }
+
+  /* Ajustes para ruleta en horizontal */
+  .ruleta-item {
+    min-width: 120px;
+  }
+  
+  .ruleta-item img {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -123,5 +176,63 @@
   }
   .card img {
     height: 200px;
+  }
+
+  /* Ajustes para ruleta en 4K */
+  .ruleta-container {
+    max-width: 1800px;
+    padding: 50px;
+  }
+  
+  .ruleta-item {
+    min-width: 240px;
+  }
+  
+  .ruleta-item img {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .ruleta-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+}
+
+/* Breakpoints adicionales para la ruleta */
+@media (max-width: 1200px) {
+  .ruleta-container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ruleta-container {
+    max-width: 800px;
+  }
+  
+  .ruleta-item {
+    min-width: 160px;
+  }
+  
+  .ruleta-item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ruleta-carousel {
+    gap: 20px;
+  }
+  
+  .ruleta-item {
+    min-width: 120px;
+  }
+  
+  .ruleta-item img {
+    width: 80px;
+    height: 80px;
   }
 }
