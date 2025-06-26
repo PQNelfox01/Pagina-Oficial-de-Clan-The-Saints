@@ -1,49 +1,56 @@
 export function renderRuleta(jugadores) {
-  const contenedor = document.getElementById("ruleta-container");
-  let index = 0;
+  const container = document.getElementById('ruleta-container');
+  if (!container) return;
 
-  const crearCarta = (jugador) => `
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="${jugador.img}" alt="${jugador.nombre}">
-          <h3>${jugador.nombre}</h3>
-          <p>${jugador.desc}</p>
-          ${jugador.horas ? `<div class="horas">${jugador.horas} horas</div>` : ''}
-        </div>
-        <div class="flip-card-back">
-          <h4>Estadísticas</h4>
-          <div class="stats">
-            <p><strong>Goles:</strong> ${jugador.stats?.goals || '0'}%</p>
-            <p><strong>Asistencias:</strong> ${jugador.stats?.assists || '0'}%</p>
-            <p><strong>Atajadas:</strong> ${jugador.stats?.saves || '0'}%</p>
-          </div>
-          <a href="${jugador.tracker}" class="tracker-btn" target="_blank">Ver Tracker</a>
-        </div>
-      </div>
-    </div>
-  `;
+  const carousel = container.querySelector('.ruleta-carousel');
+  const indicators = container.querySelector('.ruleta-indicators');
+  
+  // Limpiar ruleta existente
+  carousel.innerHTML = '';
+  indicators.innerHTML = '';
 
-  const actualizarRuleta = () => {
-    contenedor.innerHTML = `
-      <div class="ruleta-wrapper">
-        <button class="ruleta-btn" id="ruleta-prev">◀</button>
-        ${crearCarta(jugadores[index])}
-        <button class="ruleta-btn" id="ruleta-next">▶</button>
-      </div>
+  // Generar items
+  jugadores.forEach((jugador, index) => {
+    const item = document.createElement('div');
+    item.className = 'ruleta-item';
+    item.innerHTML = `
+      <img src="${jugador.avatar}" alt="${jugador.nombre}">
+      <p>${jugador.nombre}</p>
     `;
+    carousel.appendChild(item);
 
-    // Event listeners para navegación
-    document.getElementById("ruleta-prev").addEventListener("click", () => {
-      index = (index - 1 + jugadores.length) % jugadores.length;
-      actualizarRuleta();
+    // Generar indicadores
+    const indicator = document.createElement('div');
+    indicator.className = 'ruleta-indicator';
+    indicator.dataset.index = index;
+    indicators.appendChild(indicator);
+  });
+
+  // Activar primer indicador
+  if (indicators.firstChild) {
+    indicators.firstChild.classList.add('active');
+  }
+
+  // Navegación
+  const prevBtn = container.querySelector('#ruleta-prev');
+  const nextBtn = container.querySelector('#ruleta-next');
+
+  prevBtn?.addEventListener('click', () => {
+    carousel.scrollBy({ left: -200, behavior: 'smooth' });
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    carousel.scrollBy({ left: 200, behavior: 'smooth' });
+  });
+
+  // Actualizar indicadores al hacer scroll
+  carousel.addEventListener('scroll', () => {
+    const scrollPosition = carousel.scrollLeft;
+    const itemWidth = carousel.firstChild?.offsetWidth || 0;
+    const activeIndex = Math.round(scrollPosition / (itemWidth + 30)); // 30 es el gap
+    
+    container.querySelectorAll('.ruleta-indicator').forEach((ind, index) => {
+      ind.classList.toggle('active', index === activeIndex);
     });
-
-    document.getElementById("ruleta-next").addEventListener("click", () => {
-      index = (index + 1) % jugadores.length;
-      actualizarRuleta();
-    });
-  };
-
-  actualizarRuleta();
+  });
 }

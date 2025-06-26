@@ -48,9 +48,16 @@
     <main>
         <h1 class="titulo" data-en="SNTS Clan - Enhanced Showcase">Clan SNTS - Plantilla Oficial</h1>
 
-        <section class="galeria-secundaria">
-            <h2 class="titulo-seccion">💫 Ruleta de Jugadores</h2>
-            <div id="ruleta-container"></div>
+        <section class="ruleta-container" id="ruleta-container">
+            <h2>💫 Ruleta de Jugadores</h2>
+            <div class="ruleta-carousel">
+                <!-- Los items se generan dinamicamente con JavaScript -->
+            </div>
+            <div class="ruleta-nav">
+                <button class="ruleta-btn" id="ruleta-prev">(</button>
+                <button class="ruleta-btn" id="ruleta-next">)</button>
+            </div>
+            <div class="ruleta-indicators"></div>
         </section>
 
         <section class="clips">
