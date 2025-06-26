@@ -1,4 +1,61 @@
-<!DOCTYPE html>
+/* ==== BASE ==== */ (main.css)
+@import url("./base/reset.css");
+@import url("./base/variables.css");
+
+/* ==== COMPONENTS ==== */
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/nav.css");
+@import url("./components/ruleta.css");
+@import url("./components/video.css");
+
+/* ==== LAYOUT ==== */
+@import url("./layout/layout.css");
+@import url("./layout/responsive.css");
+
+/* ==== PAGES ==== */
+@import url("./pages/home.css"); /* index.html */
+
+/* ==== THEMES ==== */
+@import url("./themes/light.css");
+@import url("./themes/dark.css");
+
+
+// Importaciones de datos (main.js)
+import { jugadores } from './data/jugadores.js';
+import { renderRuleta } from './modules/ruleta.js';
+
+// Importaciones de módulos
+import { renderGaleria } from './modules/galeria.js';
+import { renderRuleta } from './modules/ruleta.js';
+import { renderLogros } from './modules/logros.js';
+import { 
+  iniciarUIEvents, 
+  iniciarFiltros,
+  renderStats 
+} from './modules/ui.js';
+
+// Inicialización de la aplicación
+document.addEventListener("DOMContentLoaded", () => {
+  console.log('Jugadores cargados:', jugadores); // Debug
+  renderRuleta(jugadores);
+  
+  // Renderizar estadísticas del jugador
+  renderStats(estadisticasJugador);
+  
+  // Iniciar eventos de UI y filtros
+  iniciarUIEvents();
+  iniciarFiltros(jugadores, renderGaleria);
+});
+
+// Hot Module Replacement para desarrollo
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}
+
+plantilla.html
+
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -40,33 +97,14 @@
     <main>
         <h1 class="titulo" data-en="SNTS Clan - Enhanced Showcase">Clan SNTS - Plantilla Oficial</h1>
 
-        <!-- Añade esto en tu plantilla.html dentro del <main> -->
-        <section class="stats-container">
-            <div class="player-header">
-                <h2 class="player-name">R.K.X</h2>
-                <p class="player-subtitle">Turbo Roka</p>
+        <section class="ruleta-container" id="ruleta-container">
+            <h2>💫 Ruleta de Jugadores</h2>
+            <div class="ruleta-carousel"></div>
+            <div class="ruleta-nav">
+                <button class="ruleta-btn" id="ruleta-prev">(</button>
+                <button class="ruleta-btn" id="ruleta-next">)</button>
             </div>
-        
-        <h3 class="stats-title">ESTILO DE JUEGO</h3>
-        
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-label">Goles</span>
-                <span class="stat-value">47.98%</span>
-            </div>
-            
-            <div class="stat-item">
-                <span class="stat-label">Asistencias</span>
-                <span class="stat-value">18.27%</span>
-            </div>
-            
-            <div class="stat-item">
-                <span class="stat-label">Atajadas</span>
-                <span class="stat-value">33.75%</span>
-            </div>
-        </div>
-        
-        <button class="tracker-btn">Ver Tracker</button>
+            <div class="ruleta-indicators"></div>
         </section>
 
         <section class="clips">

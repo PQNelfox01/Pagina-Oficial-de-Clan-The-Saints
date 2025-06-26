@@ -8,6 +8,7 @@
 @import url("./components/nav.css");
 @import url("./components/ruleta.css");
 @import url("./components/video.css");
+@import url("./components/stats.css");
 
 /* ==== LAYOUT ==== */
 @import url("./layout/layout.css");
